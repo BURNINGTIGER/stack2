@@ -8,7 +8,7 @@ SCENARIO("init", "[init]"){
 }
 
 SCENARIO("push", "[push]")  {
-	stack<int> st1;
+	stack<int> st;
 	st.push(1);
 	st.push(2);
 	REQUIRE(st.count() == 2);
@@ -28,7 +28,7 @@ SCENARIO("operator=", "[operator]") {
 	st1.push(1);
 	st1.push(2);
 	st1.push(3);
-	s2 = s1;
-	REQUIRE(s1.count() == s2.count());
+	st2 = st1;
+	REQUIRE(st1.count() == st2.count());
 
 }
