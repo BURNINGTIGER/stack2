@@ -1,7 +1,6 @@
 #include <stack.hpp>
 #include <catch.hpp>
 
-using namespace std;
 
 SCENARIO("init", "[init]"){
 	stack<int> st;
