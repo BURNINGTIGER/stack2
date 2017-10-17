@@ -68,17 +68,22 @@ stack<T>::stack(const stack<T>& other) {
 	std::copy(other.array_, other.array_ + count_, array_);
 }
 
-
 template<typename T>
-stack<T>& stack<T>::operator=(const stack<T>& other)
+stack<T>& stack<T>::operator=(const stack<T> & other)
 {
-	if (&other != this)
+	if (this != &other) 
 	{
-		stack(other).swap(*this);;
+		delete[] array_;
 	}
+	if (array_size_ != 0) 
+		{
+			array_size_ = other.array_size_;
+			count_ = other.count_;
+			array_=new T[count_];
+			std::copy(other.array_, other.array_ + other.count_, array_);
+		}
 	return *this;
 }
-
 
 template <typename T>
 void stack<T>::push(T const & value)
@@ -104,7 +109,6 @@ T stack<T>::pop()
 {
 	if (count_ == 0)
 	{
-		//throw std::logic_error("Stack is empty");
 		throw "Stack is empty";
 	}
 	T x = array_[count_ - 1];
