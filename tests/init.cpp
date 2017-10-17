@@ -3,29 +3,29 @@
 
 using namespace std;
 
-SCENARIO("init"){
-	stack<int> st();
+SCENARIO("init", "[init]"){
+	stack<int> st;
 	REQUIRE(st.count() == 0);
 }
 
-SCENARIO("push") {
-	stack<int> st1();
+SCENARIO("push", "[push]")  {
+	stack<int> st1;
 	st.push(1);
 	st.push(2);
 	REQUIRE(st.count() == 2);
 }
 
-SCENARIO("pop") {
-	stack<int> st();
+SCENARIO("pop", "[pop]"){
+	stack<int> st;
 	st.push(1);
 	st.push(2);
 	st.pop();
 	REQUIRE(st.count() == 1 );
 }
 
-SCENARIO("operator=") {
-	stack<int> st1();
-	stack<int> st2();
+SCENARIO("operator=", "[operator]") {
+	stack<int> st1;
+	stack<int> st2;
 	st1.push(1);
 	st1.push(2);
 	st1.push(3);
