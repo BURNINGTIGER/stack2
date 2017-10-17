@@ -105,7 +105,7 @@ T stack<T>::pop()
 	if (count_ == 0)
 	{
 		//throw std::logic_error("Stack is empty");
-		/throw "Stack is empty";
+		throw "Stack is empty";
 	}
 	T x = array_[count_ - 1];
 	count_--;
