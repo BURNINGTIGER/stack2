@@ -24,11 +24,10 @@ SCENARIO("pop", "[pop]"){
 
 SCENARIO("operator=", "[operator]") {
 	stack<int> st1;
-	stack<int> st2;
 	st1.push(1);
 	st1.push(2);
 	st1.push(3);
-	st2 = st1;
+	stack<int> st2 = st1;
 	REQUIRE(st1.count() == st2.count());
 
 }
