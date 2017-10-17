@@ -97,6 +97,7 @@ void stack<T>::push(T const & value)
 		array_ = new_array;
 	}
 	array_[count_++] = value;
+}
 
 template<typename T>
 T stack<T>::pop()
