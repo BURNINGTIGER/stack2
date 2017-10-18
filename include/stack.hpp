@@ -74,15 +74,8 @@ stack<T>& stack<T>::operator=(const stack<T> & other)
 {
 	if (this != &other) 
 	{
-		delete[] array_;
+		stack(other).swap(*this);
 	}
-	if (array_size_ != 0) 
-		{
-			array_size_ = other.array_size_;
-			count_ = other.count_;
-			array_=new T[count_];
-			std::copy(other.array_, other.array_ + other.count_, array_);
-		}
 	return *this;
 }
 
